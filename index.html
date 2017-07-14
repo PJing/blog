@@ -4,11 +4,59 @@
 		<meta charset="UTF-8">
 		<title>hello</title>
 		<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://cdn.bootcss.com/vue/2.3.4/vue.js"></script>
+		<script src="https://unpkg.com/vue-router@2.0.0/dist/vue-router.js" type="text/javascript" charset="utf-8"></script>
 	</head>
 	<body>
-		<div class="container">
-			<h1>WELCOME TO MY BLOG</h1>
-			<h2>hello world</h2>
+		<div class="container" id="app">
+			<h1>hello vue</h1>
+			
+			  	<router-link to="/foo">Go to Foo</router-link>
+    			<router-link to="/bar">Go to Bar</router-link>
+    			
+			
+			<!--路由出口-->
+			<router-view></router-view>
+			
 		</div>
+		<script type="text/javascript">
+			
+		
+			
+			
+			const Foo = {
+				template:"<div>foo</div>"
+			};
+			const Bar = {
+				template:"<div>bar</div>"
+			};
+			
+			
+			const routers = [
+			
+				{
+					path: "/foo",
+					component:Foo
+				},
+				{
+					path: "/bar",
+					component:Bar
+				}
+			]
+
+
+
+			//	创建一个路由实例
+			 const vueroute = new VueRouter({
+			 	routes:routers
+			 })
+			 
+			 
+			 	var App =new Vue({
+				el:"#app",
+				router:vueroute
+			})
+			
+		</script>
 	</body>
 </html>
