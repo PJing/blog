@@ -6,56 +6,52 @@
 		<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<script src="https://cdn.bootcss.com/vue/2.3.4/vue.js"></script>
 		<script src="https://unpkg.com/vue-router@2.0.0/dist/vue-router.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			.router-link-active{
+				color:red;
+			}
+		</style>
 	</head>
 	<body>
-		<div class="container" id="app">
-			<h1>hello vue</h1>
-			
-			  	<router-link to="/foo">Go to Foo</router-link>
-    			<router-link to="/bar">Go to Bar</router-link>
-    			
-			
-			<!--路由出口-->
-			<router-view></router-view>
-			
+		<div class="container">
+				<h1>welcome to vue</h1>
+			<div id="app">
+				<div class="container">
+					
+					<router-link to="/bar">to bar</router-link>
+					<router-link to="/foo">to foo</router-link>
+					
+					
+					<router-view></router-view>
+					
+				</div>
+			</div>
+				
 		</div>
 		<script type="text/javascript">
 			
-		
-			
-			
-			const Foo = {
-				template:"<div>foo</div>"
-			};
-			const Bar = {
-				template:"<div>bar</div>"
-			};
-			
-			
-			const routers = [
-			
-				{
-					path: "/foo",
-					component:Foo
-				},
-				{
-					path: "/bar",
-					component:Bar
-				}
-			]
-
-
-
-			//	创建一个路由实例
-			 const vueroute = new VueRouter({
-			 	routes:routers
-			 })
-			 
-			 
-			 	var App =new Vue({
-				el:"#app",
-				router:vueroute
+			var router = new VueRouter({
+				routes :[
+					{
+						path:"/bar",
+						component:{
+							template:"<div>123</div>"
+						}
+					},
+					{
+						path:"/foo",
+						component:{
+							template:"<div>456</div>"
+						}
+					}
+				
+				]
 			})
+			
+			var app = new Vue({
+				router
+			}).$mount("#app")
+			
 			
 		</script>
 	</body>
