@@ -30,9 +30,26 @@
 		</div>
 		<script type="text/javascript">
 			
-			  var vueRouter = new VueRouter({
+			  const router = new VueRouter({
+			  	routes:[
 			  	
+			  		{
+			  			path:"/bar",
+			  			component:{
+			  				template:"<div>bar</div>"
+			  			}
+		  			},{
+		  				path:"/foo",
+		  				component:{
+		  					template:"<div>foo</div>"
+		  				}
+		  			}
+			  	]
 			  })
+			  
+			  var vue = new Vue({
+			  	router
+			  }).$mount("#app")
 			
 			
 		</script>
