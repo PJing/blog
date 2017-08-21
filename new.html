@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	</head>
+
+	<body>
+		<div class="heading">
+			<span>123</span>
+			<i>456</i>
+			<a href="javascript:;">789</a>
+		</div>
+		<script type="text/javascript">
+			$.extend({
+				alert: function(a,b){
+					alert(a*b)
+				}
+			})
+			
+			
+//			$.alert(10,29)
+			
+			
+			$.fn.extend({
+				click:function(){
+					return $(this).each(function(){
+						$(this).on("click",function(ev){
+							console.log(ev.target);
+						})
+					})
+				}
+			})
+			
+			$(".heading").click();
+			
+			function fn(){
+				console.log(this)
+			}
+			var a={
+				f:fn
+			}
+			
+			fn()
+			
+			
+			a.f()
+			
+			
+			//登录 退出的接口 
+//			略...........
+			
+			//标注图片的接口
+			var json = {
+				imgUrl:"图片地址",    //这里我推荐直接用url，比base6好一点
+				imgName:"图片名字（这个对于前端来说可能不是必须的）"
+				raodio:[
+					{
+						code:1,//就是每个部位所对应的编号，不知道你们有没有这个
+						name:"前保险杠",
+					}
+					{
+						code:2,
+						name:"后保险杠",
+					}
+				],             //每张图片对应的可标注部位以及对应的编号
+				user:"用户名",
+				number:1000,   //当前用户已标注图片数量，这个看你们是怎么考虑的（1，当前用户所有已经标注的图片；2，登录之后从0开始计算，）
+			}
+//			暂时想到的是这么多,感觉每张图片应该还有对应的id吧，这个可能也会需要到，
+//			然后还有就是想看一下你们需要前端要返回给你们的数据，可以大概知道页面上需要编写那些功能模块，或者看需不需要更多的接口数据
+		</script>
+	</body>
+
+</html>

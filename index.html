@@ -22,13 +22,13 @@
 					<router-link to="/user/foo/small">to small</router-link>
 					
 					
+				</div>
 					<router-view></router-view>
 					
-				</div>
 			</div>
 			<div class="list-group">
-				<div class="list-roup-item list-group-item-success">
-					为什么要我去做测试
+				<div class="list-roup-item">
+					<a href="" class="btn btn-danger" id="btn">按钮</a>
 				</div>
 			</div>
 		</div>
@@ -36,7 +36,7 @@
 			
 			
 			 const user = {
-			 	template:'<div class="user"><h2>user {{$route.params}}</h2><router-view></router-view></div>'
+			 	template:'<div class="user"><h2>user {{$route.path}}</h2><router-view></router-view></div>'
 			 }
 			 
 			 const big = {
@@ -75,6 +75,8 @@
 			var vue =new Vue({
 				router
 			}).$mount("#app")
+			
+			
 			
 		</script>
 	</body>
