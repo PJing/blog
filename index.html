@@ -1,15 +1,30 @@
-<!DOCTYPE HTML>
+<!doctype html>
 <html>
-	<head>
-		<title>正在跳转</title>
-	</head>
-	<body>
-		<h1>欢迎来到我的个人网站</h1>
-		<script type="text/javascript">
-			window.onload = function(){
-				// window.location = "css-project/index.html"
-				document.body.appendChild("hello world！")
-			}
-		</script>
-	</body>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+    <title>基本地图展示</title>
+    <link rel="stylesheet" href="http://cache.amap.com/lbs/static/main1119.css"/>
+    <script src="http://webapi.amap.com/maps?v=1.4.2&key=d265c407c3cd9acafae35f6e4f86538e"></script>
+</head>
+<body>
+<div id="container"></div>
+
+<script>
+    var map = new AMap.Map('container', {
+        resizeEnable: true,
+        zoom:20,
+        center: [116.397428, 39.90923]
+    });
+
+    navigator.geolocation.getCurrentPosition(function(position) {
+//	  getAddr(position.coords.latitude, position.coords.longitude);
+	  console.log(position)
+	});
+//	function getAddr(x,y){
+//		alert(x,y)
+//	}
+</script>
+</body>
 </html>
