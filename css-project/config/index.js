@@ -12,7 +12,7 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
     	'/api':{
-    			target: 'https://op.juhe.cn/',
+    			target: 'https://api.douban.com/',
     			secure: false, //如果是https接口，需要配置这个参数
 	        changeOrigin: true,
 	        pathRewrite: {
