@@ -4,11 +4,21 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
  		<meta name="robots" content="逐影寻声,movie,电影" /> <!-- 搜索引擎抓取 -->
+ 		<!--是否启用 WebApp 全屏模式，删除苹果默认的工具栏和菜单栏-->
+		<meta name=”apple-itunes-app” content=”app-id=myAppStoreID, affiliate-data=myAffiliateData, app-argument=myURL”>
  		<link rel="shortcut icon" href="../src/assets/image/logo.png" type="image/x-icon">
  		<link rel="icon" sizes="any" mask="" href="../src/assets/image/logo.png">
     <title>逐影寻声</title>
     <!--<script src="https://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>-->
     
+    <!-- iOS 启动画面 begin -->
+    <link rel="apple-touch-startup-image" sizes="768x1004" href="..srcassets/start/start640-1136.png"/>
+    <!-- iPhone/iPod Touch 竖屏 320x480 (标准分辨率) -->
+    <link rel="apple-touch-startup-image" sizes="640x960" href="..srcassets/start/start640-1136.png"/>
+    <!-- iPhone/iPod Touch 竖屏 640x960 (Retina) -->
+    <link rel="apple-touch-startup-image" sizes="640x1136" href="..srcassets/start/start640-1136.png"/>
+
+    <!-- iOS 启动画面 end -->
   </head>
   <body>
     <div id="app"></div>
