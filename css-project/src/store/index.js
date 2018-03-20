@@ -1,23 +1,13 @@
 import Vue from "Vue"
 import Vuex from "vuex"
+import { tab } from '../store/tab'
 Vue.use(Vuex)
 
 
-const state={
-		count:0
-	}
-const getters = {
-	count : state => state.count
-}
-const mutations={
-		increment(state){
-			state.count++
-		}
-}
 
 
 export default new Vuex.Store({
-	state,
-	getters,
-	mutations
+	modules:{
+		tab
+	}
 })

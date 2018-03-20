@@ -9,9 +9,14 @@ export default {
   name: 'app'
 }
 </script>
-<style type="text/css">
+<style>
 	*{
 		margin: 0;
 		padding: 0;
+	}
+	html,body{
+		max-width: 750px;
+		margin: 0 auto;
+		position: relative;
 	}
 </style>
