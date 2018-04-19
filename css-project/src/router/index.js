@@ -10,6 +10,7 @@ import newSwiper from '@/components/newSwiper/newSwiper'
 import my from '@/components/my/my'
 import css3Swiper from '@/components/css3Swiper/css3Swiper'
 import imgUpload from '@/components/imgUpload/imgUpload'
+import loadmore from '@/components/loadmore/loadmore'
 
 Vue.use(Router)
 
@@ -26,6 +27,9 @@ export default new Router({
     	path: '/',
       name: 'movieList',
       component: movieList,
+      meta:{
+      	keepAlive:true
+      }
     },
     {
     	path: '/qrcanvas',
@@ -66,6 +70,12 @@ export default new Router({
 			path:'/movieDetail',
 			name:'movieDetail',
 			component:movieDetail
+		},
+		{
+			
+			path:'/loadmore',
+			name:'loadmore',
+			component:loadmore
 		},
 		{
 			path:'*',

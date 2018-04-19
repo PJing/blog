@@ -1,0 +1,35 @@
+<!--index.wxml-->
+<view class="container">
+  <!-- <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+  <view>
+  <button bindtap='changeName'>click me</button>
+  <view>{{motto}}</view>
+  </view>
+  <wxs src="./../index.wxs" module="tools" />
+  <view> {{tools.msg}} </view>
+  <view> {{tools.bar(tools.FOO)}} </view> -->
+  <view class='watch'>
+    <view class='circle'>
+      <view class='circle1'>
+        <view class='circle2'>
+          <view class='circle3'>
+            <view class='hour' style="transform:rotate({{hourDeg}}deg)"></view>
+            <view class='min' style="transform:rotate({{minDeg}}deg)"></view>
+            <view class='second' style="transform:rotate({{secondDeg}}deg)"></view>
+            <view class='radio'></view>
+          </view>
+        </view>
+      </view>
+    </view>
+  
+  </view>
+</view>

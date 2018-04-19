@@ -25,7 +25,13 @@ export const httpPost = (urlKey, params) => axios({
   }
 });
 
+export const httpGet  = (urlKey,data) => axios({
+  url: api[urlKey]+"/"+data,
+  method: 'get',
+});
+
 Vue.prototype.$post = httpPost;
+Vue.prototype.$get = httpGet;
 
 //import Vuex from "vuex"
 //Vue.use(Vuex);

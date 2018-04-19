@@ -1,0 +1,8 @@
+<view>
+<map
+ class='map'
+ longitude="{{curAddress.longitude}}"
+ latitude="{{curAddress.latitude}}"
+ markers='{{markers}}'
+></map>
+</view>

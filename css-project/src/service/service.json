@@ -1,4 +1,5 @@
 {
 	"theaters" : "douban/in_theaters",
-	"coming_soon":"douban/coming_soon"
+	"coming_soon":"douban/coming_soon",
+	"subject":"douban/subject"
 }
