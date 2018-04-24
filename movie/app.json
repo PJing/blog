@@ -9,21 +9,5 @@
     "navigationBarBackgroundColor": "#000",
     "navigationBarTitleText": "第一个小程序",
     "navigationBarTextStyle":"white"
-  },
-  "tabBar": {
-    "list": [
-      {
-        "pagePath": "pages/index/index",
-        "text": "首页"
-      },
-      {
-        "pagePath": "pages/logs/logs",
-        "text": "日志"
-      },
-      {
-        "pagePath": "pages/list/list",
-        "text": "列表"
-      }
-    ]
   }
 }

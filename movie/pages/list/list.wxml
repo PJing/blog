@@ -1,8 +1,37 @@
 <view>
 <map
+ id="qqmap"
  class='map'
+ style='height:{{mapHeight}}'
  longitude="{{curAddress.longitude}}"
  latitude="{{curAddress.latitude}}"
  markers='{{markers}}'
+ show-location="true"
+ controls="{{controls}}"
+ bindcontroltap='controltap'
 ></map>
+<view class='btn-box' style='height:{{botHeight}}'>
+  <view class='tap-icon'
+    bindtap='slide'
+  ></view>
+  <view class='input-box'>
+    <input class='search' 
+    type='text' 
+    value="{{keyword}}"
+    placeholder='输入地址' 
+    confirm-type='search'
+    bindinput='getSuggestion'    
+    bindconfirm='search'
+    bindfocus='toTop'
+    adjust-position
+    ></input>
+    <button size="mini" wx:if="{{slideIndex == 2}}" bindtap="getSuggestion">搜索</button>
+  </view>
+  <view class='sel-result'>
+    <view class='list-item' wx:for="{{selResult}}" wx:key="list" bindtap='searchAddr' data-info='{{item}}'>
+      <view>{{item.title}}</view>
+      <view class='city'>{{item.address}}</view>
+    </view>
+  </view>
+</view>
 </view>
