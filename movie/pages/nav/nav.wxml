@@ -1,0 +1,12 @@
+<!--pages/nav/nav.wxml-->
+<!-- <text>pages/nav/nav.wxml</text> -->
+<view>
+<view class='nav'>
+ <block wx:for="{{navList}}" wx:key="nav">
+  <view class='item {{curIndex == index ? "active" : ""}}' data-index="{{index}}" bindtap='tab'>
+    <image class='img' src="{{item.icon}}"></image>
+    <text class='txt'>{{item.text}}</text>
+  </view>
+ </block>  
+</view>
+</view>

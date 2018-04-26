@@ -1,13 +1,16 @@
 {
-  "pages":[
-    "pages/list/list",
+  "pages": [
+    "pages/first/first",
+    "pages/third/third",
+    "pages/second/second",
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/selectList/selectList"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#000",
-    "navigationBarTitleText": "第一个小程序",
-    "navigationBarTextStyle":"white"
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#3385ff",
+    "navigationBarTitleText": "地图",
+    "navigationBarTextStyle": "white"
   }
 }

@@ -1,6 +1,0 @@
-{
-  "navigationBarTitleText":"列表组件",
-  "usingComponents":{
-    "list":"../componentDemo/componentDemo"
-  }
-}

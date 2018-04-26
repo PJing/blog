@@ -1,0 +1,15 @@
+<!--pages/second/second.wxml-->
+<view>
+  <nav cur-index="1"></nav>
+   <view class='search-box'>
+    <input class='input' type='search' placeholder='搜地点，找公交，查路线'></input>
+  </view>
+  <view class='navbar'>
+    <block wx:for="{{navbarList}}" wx:key="item">
+      <view class='item'>
+      <view class='icon'></view>
+        <text>{{item.text}}</text>
+      </view>
+    </block>
+  </view>
+</view>

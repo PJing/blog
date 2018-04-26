@@ -1,0 +1,45 @@
+/* pages/second/second.wxss */
+.search-box{
+  background-color: #3385ff;
+  padding: 20rpx 30rpx;
+  border-top: 1px solid #1a6fff;
+}
+.input{
+  background-color:#fff;
+  height: 80rpx;
+  padding-left: 20rpx;
+  font-size: 32rpx;
+}
+.item{
+  width: 25vw;
+  display: inline-block;
+  text-align: center;
+  font-size: 28rpx;
+  color:#555;
+  padding-top: 30rpx;
+}
+.item .icon{
+  width: 100rpx;
+  height: 100rpx;
+  margin: 0 auto;
+  background: url('https://webmap1.bdimg.com/mobile/simple/static/index/images/index-nb-round-new-2x_411be7b.png') no-repeat;
+  background-size: 100rpx 1160rpx;
+}
+.item:nth-child(2) .icon{
+  background-position: 0 -104rpx;
+}
+.item:nth-child(3) .icon{
+  background-position: 0 -210rpx;
+}
+.item:nth-child(4) .icon{
+  background-position: 0 -1060rpx;
+}
+.item:nth-child(5) .icon{
+  background-position: 0 -528rpx;
+}
+.item:nth-child(6) .icon{
+  background-position: 0 -740rpx;
+}
+.item:nth-child(7) .icon{
+  background-position: 0 -955rpx;
+}

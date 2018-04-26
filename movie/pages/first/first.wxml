@@ -1,0 +1,22 @@
+<view>
+  <nav cur-index="0"></nav>
+  <view class='search-box'>
+    <input class='input' type='search' 
+    placeholder='搜地点，找公交，查路线'
+    bindinput='getSuggestion'
+    ></input>
+  </view>
+    <view class='addr-list'>
+      <view class='list' wx:for="{{addrList}}" wx:key="addr" data-detail="{{item}}" bindtap='toSelectList'>
+          <view>{{item.title}}</view>
+          <text>{{item.address}}</text>
+      </view>
+    </view>
+  <map
+    id='wxmap'
+    class='wxmap'
+    controls='{{controls}}'
+    bindcontroltap="controltap"
+    show-location
+  ></map>
+</view>

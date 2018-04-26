@@ -1,0 +1,27 @@
+/* pages/nav/nav.wxss */
+.nav{
+  display: flex;
+  width: 100vw;
+  background-color: #3385ff;
+}
+.item{
+  flex: 1;
+  color: #fff;
+  opacity: .6;
+  font-size: 32rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.item.active{
+  opacity: 1;
+}
+.txt{
+  padding-left: 10rpx;
+}
+.img{
+  width: 32rpx;
+  height: 32rpx;
+}

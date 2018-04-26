@@ -1,0 +1,35 @@
+<!--pages/selectList/selectList.wxml-->
+<view class='address'>
+  <view class='addr-list'  bindtap='mapShow'>
+    <view class='addr-name'>{{addrList.formatted_addresses.recommend}}</view>
+    <view class='addr-detail'>{{addrList.address}}</view>
+    <view class='traffic'>
+        <view>
+          <image src='../../../image/dingwei5.png'></image>
+          <text>到这里去</text>
+         </view>
+         <view>
+          <image src='../../../image/dingwei6.png'></image>
+          <text>地图</text>
+         </view>
+    </view>
+  </view>
+  <view class='more' bindtap='morShow' wx:if="{{!more}}">查看更多周边地址>></view>
+  <block wx:if="{{more}}">
+    <view class='addr-list' wx:for="{{addrList.pois}}" wx:key="addr">
+      <view class='addr-name'>{{item.title}}</view>
+      <view class='addr-detail'>{{item.address}}</view>
+      <view class='addr-type'>{{item.category}}</view>
+      <view class='traffic'>
+         <view>
+          <image src='../../../image/dingwei5.png'></image>
+          <text>到这里去</text>
+         </view>
+         <view>
+          <image src='../../../image/dingwei6.png'></image>
+          <text>地图</text>
+         </view>
+      </view>
+    </view>
+  </block>
+</view>

@@ -1,0 +1,58 @@
+/* pages/selectList/selectList.wxss */
+.address{
+  padding: 20rpx;
+  background-color: #f2f2f2;
+  min-height: 100vh;
+}
+.addr-list{
+  background-color: #fff;
+  border: 1rpx solid #d4d4d4;
+  padding: 20rpx;
+  border-radius: 5rpx;  
+  margin-bottom: 20rpx;
+}
+.addr-name{
+  font-size: 32rpx;
+  color: #3b3b3b;
+  font-weight: bold;
+}
+.addr-detail{
+  /* border-left: 1rpx solid #d9dadb; */
+  color: #848484;
+  font-size: 26rpx;
+}
+.addr-type{
+  font-size: 26rpx;
+  color: #ccc;
+  padding-top: 10rpx;
+}
+.traffic{
+  border-top: 1rpx solid #d9dadb;
+  font-size: 30rpx;
+  color: #666;
+  display: flex;
+  align-items: center;
+  margin-top: 20rpx;
+  padding-top: 20rpx;
+}
+.traffic image{
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 10rpx;
+}
+.more{
+  padding: 20rpx;
+  text-align: center;
+  color: #666;
+  font-size: 32rpx;
+}
+.traffic>view{
+  flex: 1;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.traffic>view:first-child{
+  border-right: 1rpx solid #d9dadb;
+}

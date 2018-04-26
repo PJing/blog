@@ -1,0 +1,33 @@
+<!--pages/third/third.wxml-->
+<view class='content'>
+  <nav cur-index="2"></nav>
+  <view class='navbar'>
+    <block wx:for="{{navbarList}}" wx:key="navbar">
+      <view class='item'>
+        <text class='active'>{{item.text}}</text>
+      </view>
+    </block>
+  </view>
+  <view class='search-form'>
+    <view class='left'>
+      <text>↑↓</text>
+    </view>
+    <view class='middle'>
+      <input type='text' placeholder='输入起点...'></input>
+      <input type='text' placeholder='输入终点...'></input>
+    </view>
+    <view class='right'>
+      <button size='mini'>搜索</button>
+    </view>
+  </view>
+  <view class='sel-result'>
+    <view class='res-list'>
+        <view class='title'>轨道交通二号线</view>
+        <view class='info'>
+          <text>50分钟</text>
+          <text>8.9公里</text>
+          <text>50分钟</text>
+        </view>
+    </view>
+  </view>
+</view>
