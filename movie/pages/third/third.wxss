@@ -96,3 +96,28 @@
   border-left: 0;
   padding-left: 0;
 }
+.addr-list{
+  padding: 10rpx 30rpx 0;
+  background-color: #fff;
+    margin-top: 20rpx;
+}
+.list{
+  border-bottom: 1rpx solid #e7e7e7;
+  padding: 10rpx;
+  display: flex;
+  line-height: 60rpx;
+}
+.list view{
+  color: #666;
+  font-size:32rpx;
+}
+.list text{
+  padding-left: 5rpx;
+  color: silver;
+  font-size: 24rpx;
+  padding-top: 4rpx;
+  flex: 1;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

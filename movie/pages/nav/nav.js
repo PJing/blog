@@ -28,9 +28,9 @@ Component({
       }
     ],
     url:[
-      "../../pages/first/first",
-      "../../pages/second/second",
-      "../../pages/third/third",      
+      "/pages/first/first",
+      "/pages/second/second",
+      "/pages/third/third",      
     ]
   },
 

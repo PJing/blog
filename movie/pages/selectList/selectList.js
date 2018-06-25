@@ -97,5 +97,21 @@ Page({
       more:true
     })
   },
-  
+  mapShow(ev){
+    console.log(ev.currentTarget.dataset.item);
+    var location = ev.currentTarget.dataset.item.location
+    wx.navigateTo({
+      url: '/pages/first/first?location=' + JSON.stringify(location),
+    })
+  },
+  toWay(ev){
+    var addrInfo = {
+      address: ev.currentTarget.dataset.item.formatted_addresses.recommend,
+      location: ev.currentTarget.dataset.item.location
+    }
+    console.log(addrInfo);
+    wx.navigateTo({
+      url: '/pages/third/third?addrInfo='+ JSON.stringify(addrInfo),
+    })    
+  }
 })

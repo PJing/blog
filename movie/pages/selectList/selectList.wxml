@@ -1,15 +1,15 @@
 <!--pages/selectList/selectList.wxml-->
 <view class='address'>
-  <view class='addr-list'  bindtap='mapShow'>
+  <view class='addr-list'>
     <view class='addr-name'>{{addrList.formatted_addresses.recommend}}</view>
     <view class='addr-detail'>{{addrList.address}}</view>
     <view class='traffic'>
-        <view>
-          <image src='../../../image/dingwei5.png'></image>
+        <view bindtap='toWay' data-item="{{addrList}}">
+          <image src='/image/dingwei5.png'></image>
           <text>到这里去</text>
          </view>
-         <view>
-          <image src='../../../image/dingwei6.png'></image>
+         <view bindtap='mapShow' data-item="{{addrList}}">
+          <image src='/image/dingwei6.png'></image>
           <text>地图</text>
          </view>
     </view>
@@ -22,11 +22,11 @@
       <view class='addr-type'>{{item.category}}</view>
       <view class='traffic'>
          <view>
-          <image src='../../../image/dingwei5.png'></image>
+          <image src='/image/dingwei5.png'></image>
           <text>到这里去</text>
          </view>
-         <view>
-          <image src='../../../image/dingwei6.png'></image>
+         <view bindtap='mapShow' data-item="{{item}}">
+          <image src='/image/dingwei6.png'></image>
           <text>地图</text>
          </view>
       </view>

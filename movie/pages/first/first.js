@@ -21,30 +21,52 @@ Page({
         position:{
           left:10,
           top:10,
-          width:100,
-          height:100
+          width:50,
+          height:50
         },
         iconPath:"../../image/dingwei.png",
         clickable: true
       }
-    ]
+    ],
+    markers:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    // 使用 wx.createMapContext 获取 map 上下文
+    this.mapCtx = wx.createMapContext('wxmap');
+    console.log(options.location);
+    if (options.location){
+      var location = JSON.parse(options.location)
+      this.setData({
+        markers:[
+          {
+            id:0,
+            latitude: location.lat,
+            longitude: location.lng,
+            // iconPath:"/image/dingwei6.png",
+          }
+        ]
+      })
+      this.includePoints();
+      this.translateMarker();
+    }else{
+      this.moveToLocation();
+    }
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    // 使用 wx.createMapContext 获取 map 上下文
-    this.mapCtx = wx.createMapContext('wxmap');
-
-    this.moveToLocation();
+    wx.showLoading({
+      title: 'loading',
+    })
+    setTimeout(() => {
+      wx.hideLoading()
+    },2000)
   },
 
   /**
@@ -126,6 +148,27 @@ Page({
   },
   //缩放视野内点坐标
   includePoints:function(){
-    
+    this.mapCtx.includePoints({
+      padding: [10],
+      points: [{
+        latitude: this.data.markers[0].latitude,
+        longitude: this.data.markers[0].longitude,
+      }],
+    })
+  },
+  //平移标记点
+  translateMarker:function(){
+    this.mapCtx.translateMarker({
+      markerId: 0,
+      autoRotate: true,
+      duration: 1000,
+      destination: {
+        latitude: this.data.markers[0].latitude,
+        longitude: this.data.markers[0].longitude,
+      },
+      animationEnd() {
+        console.log('animation end')
+      }
+    })
   }
 })

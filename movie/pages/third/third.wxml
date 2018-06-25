@@ -3,8 +3,8 @@
   <nav cur-index="2"></nav>
   <view class='navbar'>
     <block wx:for="{{navbarList}}" wx:key="navbar">
-      <view class='item'>
-        <text class='active'>{{item.text}}</text>
+      <view class='item' data-index='{{index}}' bindtap='tab'>
+        <text class='{{curIndex == index? "active" : ""}}'>{{item.text}}</text>
       </view>
     </block>
   </view>
@@ -13,21 +13,29 @@
       <text>↑↓</text>
     </view>
     <view class='middle'>
-      <input type='text' placeholder='输入起点...'></input>
-      <input type='text' placeholder='输入终点...'></input>
+      <input type='text' placeholder='输入起点...' data-startend="1" bindinput='selectAddr' value='{{startAddr.address || ""}}'></input>
+      <input type='text' placeholder='输入终点...' data-startend="2" bindinput='selectAddr' value='{{addrInfo.address || ""}}'></input>
     </view>
     <view class='right'>
-      <button size='mini'>搜索</button>
+      <button size='mini' disabled='{{isDisabled}}' bindtap='goWay'>搜索</button>
     </view>
   </view>
-  <view class='sel-result'>
+  <!-- 路线规划列表 -->
+  <view class='sel-result' wx:if="{{isSelect == 1}}">
     <view class='res-list'>
-        <view class='title'>轨道交通二号线</view>
-        <view class='info'>
+        <view class='title'>距离：{{distance}}米</view>
+        <!-- <view class='info'>
           <text>50分钟</text>
           <text>8.9公里</text>
           <text>50分钟</text>
-        </view>
+        </view> -->
+    </view>
+  </view>
+  <!-- 搜索列表 -->
+  <view class='addr-list' wx:if="{{isSelect == 2}}">
+    <view class='list' wx:for="{{addrList}}" wx:key="addr" data-detail="{{item}}" bindtap='setAddr'>
+        <view>{{item.title}}</view>
+        <text>{{item.address}}</text>
     </view>
   </view>
 </view>

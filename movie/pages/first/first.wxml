@@ -17,6 +17,7 @@
     class='wxmap'
     controls='{{controls}}'
     bindcontroltap="controltap"
+    markers="{{markers}}"
     show-location
   ></map>
 </view>

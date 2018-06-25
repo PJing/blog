@@ -63,8 +63,8 @@
 			}
 		},
 		created(){
-//			this.testJsonp();
-			this.theaters();
+			this.testJsonp();
+//			this.theaters();
 		},
 		components:{
 			tabBar:tabBar,
@@ -83,6 +83,7 @@
 				jsonp(url,str,(res) => {
 					console.log(res)
 					this.movieList.push(...res.subjects)
+					this.loading = false;
 				})
 			},
 			theaters(){
