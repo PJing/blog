@@ -11,6 +11,12 @@ import my from '@/components/my/my'
 import css3Swiper from '@/components/css3Swiper/css3Swiper'
 import imgUpload from '@/components/imgUpload/imgUpload'
 import loadmore from '@/components/loadmore/loadmore'
+import vuexTest from "@/components/vuexTest/vuexTest"
+import pictureCode from "@/components/pictureCode/pictureCode"
+import keepAlive from "@/components/keep_alive/keep_alive"
+import keepA from "@/components/keep_alive/components/keepA"
+import keepB from "@/components/keep_alive/components/keepB"
+import keepC from "@/components/keep_alive/components/keepC"
 
 Vue.use(Router)
 
@@ -76,6 +82,37 @@ export default new Router({
 			path:'/loadmore',
 			name:'loadmore',
 			component:loadmore
+		},
+		{
+			path:'/vuexTest',
+			name:'vuexTest',
+			component:vuexTest
+		},{
+			path:'/pictureCode',
+			name:'pictureCode',
+			component:pictureCode
+		},
+		{
+			path:'/keepAlive',
+			name:'keepAlive',
+			component:keepAlive,
+			children:[
+				{
+					path: 'keepA',
+					name: 'keepA',
+					component: keepA
+				},
+				{
+					path: 'keepB',
+					name: 'keepB',
+					component: keepB
+				},
+				{
+					path: 'keepC',
+					name: 'keepC',
+					component: keepC
+				}
+			]
 		},
 		{
 			path:'*',

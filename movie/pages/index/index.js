@@ -1,4 +1,10 @@
 //index.js
+
+wx.cloud.init({
+  traceUser: true
+})
+const db = wx.cloud.database()
+const todos = db.collection('todos')
 //获取应用实例
 const app = getApp()
 
@@ -59,13 +65,55 @@ Page({
       })
     } 
    this.time();
+  //  this.getDB()
+    this.getDBData()
   },
   getUserInfo: function(e) {
-    console.log(e)
+    console.log('getUserInfo',e)
     app.globalData.userInfo = e.detail.userInfo
     this.setData({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
+    })
+  },
+  // 获取数据库
+  getDB() {
+    // 云储存能力
+    if (!wx.cloud) {
+      console.error('请使用 2.2.3 或以上的基础库以使用云能力')
+    } else {
+      
+      const todo = db.collection('todos').doc('W6oltJKURGseSvUf')
+      console.log('todo', todo)
+      // 往数据库插入数据
+      db.collection('todos').add({
+        data: {
+          description: '这是小程序插入的数据',
+          due: new Date(),
+          tages: [
+            'cloud',
+            'database'
+          ],
+          // 为待办事项添加一个地理位置（113°E，23°N）
+          location: new db.Geo.Point(113, 23),
+          done: false
+        },
+        success(res) {
+          console.log('addData', res)
+        }
+      })
+    }
+  },
+  // 读取数据
+  getDBData() {
+    db.collection('todos').doc('W6o3vA-6q4jZ8jaR').get().then(res => {
+      console.log('获取的数据库的数据', res.data)
+    })
+    //查询某个集合
+    db.collection('todos').where({
+      done:false
+    }).get().then(res => {
+      console.log('条件获取数据', res.data)
     })
   },
   time(){

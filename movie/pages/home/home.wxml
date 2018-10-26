@@ -1,0 +1,6 @@
+<!--pages/home/home.wxml-->
+<view>
+  <view wx:for="{{navList}}" wx:key="name" class='list'>
+    <navigator url="{{item.url}}">{{item.name}}</navigator>
+  </view>
+</view>

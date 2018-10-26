@@ -1,0 +1,7 @@
+/* pages/home/home.wxss */
+.list{
+  line-height: 80rpx;
+  font-size: 40rpx;
+  border-bottom: 1rpx solid #ccc;
+  padding: 0 20rpx;
+}

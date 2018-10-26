@@ -1,16 +1,19 @@
 {
   "pages": [
+    "pages/home/home",
+    "pages/index/index",
     "pages/first/first",
     "pages/third/third",
     "pages/second/second",
-    "pages/index/index",
     "pages/logs/logs",
-    "pages/selectList/selectList"
+    "pages/selectList/selectList",
+    "pages/fileUpload/fileUpload"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#3385ff",
     "navigationBarTitleText": "地图",
     "navigationBarTextStyle": "white"
-  }
+  },
+  "cloud": true
 }

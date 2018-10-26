@@ -13,15 +13,45 @@
 		<a>2</a>
 		<a>3</a>
 		<a>4</a>
+		<p v-html="temp"></p>
+		<temps></temps>
 	</div>
 </template>
 
 <script>
+	import arrJson from "./arr.json"
+	import axios from 'axios'
 	export default {
 		name:"css3Swiper",
 		data(){
 			return {
+				num:213,
+				temp:arrJson
+			}
+		},
+		created(){
+			
+		},
+		components:{
+			"temps":(resolve) => {
+				axios({
+				method:"get",
+				url:"arr.json",
 				
+			}).then(res => {
+				
+				alert(res)
+			}).catch(err => {
+					resolve({
+						data:{
+							aaa:'2'
+						},
+						template:"<div>{{aaa}}</div>",
+						
+					}
+					)
+
+			})
 			}
 		}
 	}

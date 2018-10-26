@@ -33,8 +33,8 @@ export const httpGet  = (urlKey,data) => axios({
 Vue.prototype.$post = httpPost;
 Vue.prototype.$get = httpGet;
 
-//import Vuex from "vuex"
-//Vue.use(Vuex);
+import Vuex from "vuex"
+Vue.use(Vuex);
 Vue.config.productionTip = false
 Vue.use(ElementUI)
 Vue.use(VueTouch, {name: 'v-touch'})
