@@ -17,6 +17,8 @@ import keepAlive from "@/components/keep_alive/keep_alive"
 import keepA from "@/components/keep_alive/components/keepA"
 import keepB from "@/components/keep_alive/components/keepB"
 import keepC from "@/components/keep_alive/components/keepC"
+import guojihua from "@/components/guojihua/guojihua"
+import reload from "@/components/reload/reload"
 
 Vue.use(Router)
 
@@ -87,7 +89,8 @@ export default new Router({
 			path:'/vuexTest',
 			name:'vuexTest',
 			component:vuexTest
-		},{
+		},
+		{
 			path:'/pictureCode',
 			name:'pictureCode',
 			component:pictureCode
@@ -113,6 +116,16 @@ export default new Router({
 					component: keepC
 				}
 			]
+		},
+		{
+			path:'/guojihua',
+			name:'guojihua',
+			component:guojihua
+		},
+		{
+			path:'/reload',
+			name:'reload',
+			component:reload
 		},
 		{
 			path:'*',

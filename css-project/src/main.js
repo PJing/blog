@@ -33,6 +33,9 @@ export const httpGet  = (urlKey,data) => axios({
 Vue.prototype.$post = httpPost;
 Vue.prototype.$get = httpGet;
 
+// 国际化
+import i18n from './assets/i18n/i18n'
+
 import Vuex from "vuex"
 Vue.use(Vuex);
 Vue.config.productionTip = false
@@ -44,5 +47,6 @@ new Vue({
   el: '#app',
   router,
   store,
+  i18n, // 国际化
   render: h => h(App)
 }).$mount('#app')
